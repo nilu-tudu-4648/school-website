@@ -279,7 +279,7 @@ body {
 }
 
 .logo-main {
-  font-size: 20px;
+  font-size: clamp(18px, 4vw, 20px);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -393,7 +393,7 @@ body {
 .hero-image {
   width: 100%;
   max-width: 600px;
-  height: 450px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
@@ -419,7 +419,7 @@ body {
 }
 
 .hero-title {
-  font-size: 52px;
+  font-size: clamp(32px, 8vw, 52px);
   font-weight: 700;
   color: var(--white);
   line-height: 1.15;
@@ -1182,11 +1182,12 @@ body {
   }
   
   .hero-title {
-    font-size: 32px;
+    font-size: clamp(28px, 10vw, 36px);
   }
   
   .hero-image {
-    height: 280px;
+    aspect-ratio: 16 / 9;
+    height: auto;
   }
   
   .hero-buttons {
@@ -1228,9 +1229,30 @@ body {
     justify-content: center;
   }
   
+
   .footer-bottom {
     flex-direction: column;
     gap: 16px;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-form button {
+    width: 100%;
+    border-radius: 50px;
+  }
+  
+  .hero-badge {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+  
+  .section-title {
+    font-size: 28px;
   }
 }
